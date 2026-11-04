@@ -1,8 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import Nav from '@/components/Nav/Nav.jsx';
+import Home from '@/pages/Home/Home.jsx';
 
-function App() {
-  
+export default function App() {
+  return (
+    <>
+      <Nav />
+      <Home />
+    </>
+  );
 }
 
-export default App

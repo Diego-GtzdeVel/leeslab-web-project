@@ -1,0 +1,39 @@
+:root {
+  /* Colores (variables de Figma) */
+  --lees-blue: #002596;
+  --lees-blue-contrast: #374d92;
+  --verde-lab: #357533;
+  --cold-grey: #e4e7ec;
+  --cold-grey-50: #edeff3;
+  --slate: #1c2333;
+  --white: #ffffff;
+  --cta-overlay: rgba(55, 77, 146, 0.4);
+
+  /* Tipografía */
+  --font-trebuchet: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+  --font-fira: 'Fira Sans', 'Trebuchet MS', Arial, sans-serif;
+
+  --fs-display: 56px;
+  --fs-cta: 48px;
+  --fs-h2: 36px;
+  --fs-h3: 32px;
+  --fs-body-lg: 24px;
+  --fs-body: 20px;
+  --fs-button: 16px;
+
+  /* Espaciado y radios */
+  --space-section: 24px;
+  --space-page: 32px;
+  --radius-card: 16px;
+  --radius-pill: 25px;
+
+  --nav-height: 96px;
+}
+
+:root {
+  /* Animaciones (tomadas del prototipo de Figma) */
+  --ease-nav: cubic-bezier(0.546, 0.008, 0.909, 0.759);
+  --duration-nav: 500ms;
+  --ease-navlink: cubic-bezier(0.801, 0.006, 0.927, 0.51);
+  --duration-navlink: 300ms;
+}

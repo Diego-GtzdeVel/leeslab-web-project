@@ -1,0 +1,210 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 8px var(--space-page);
+  background-color: var(--lees-blue-contrast);
+  color: var(--white);
+}
+
+/* ---------- Barra (estado closed) ---------- */
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+
+.nav__logo img {
+  width: 240px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.menu__label {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: var(--fs-body-lg);
+  text-box: trim-both cap alphabetic;
+}
+
+/* Hamburguesa → X (equivalente al Smart Animate entre variantes) */
+.menu__hamburger {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.menu__hamburger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: currentColor;
+  transition:
+    transform var(--duration-nav) var(--ease-nav),
+    opacity var(--duration-nav) var(--ease-nav),
+    top var(--duration-nav) var(--ease-nav);
+}
+
+.menu__hamburger span:nth-child(1) { top: 2px; }
+.menu__hamburger span:nth-child(2) { top: 9px; }
+.menu__hamburger span:nth-child(3) { top: 16px; }
+
+.nav--open .menu__hamburger span:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+
+.nav--open .menu__hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav--open .menu__hamburger span:nth-child(3) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+/* ---------- Panel (estado open) ---------- */
+.nav__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--duration-nav) var(--ease-nav),
+    opacity var(--duration-nav) var(--ease-nav);
+}
+
+.nav--open .nav__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.nav__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.nav__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 240px;
+  padding: 25px 0 72px; /* 25 de gap + 80 de padding inferior − 8 del nav */
+}
+
+.nav__secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 170px;
+  flex-shrink: 0;
+}
+
+.nav__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__group .nav__sublink {
+  white-space: normal;
+  text-align: left;
+}
+
+.nav__primary {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav__primary ul {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.nav__divider {
+  width: 100%;
+  height: 1px;
+}
+
+/* ---------- Utilidades ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  .nav__content {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding-inline: var(--space-section);
+  }
+
+  .nav__bar {
+    height: 64px;
+  }
+
+  .nav__logo img {
+    width: 192px;
+    height: 64px;
+  }
+
+  .nav__content {
+    flex-direction: column-reverse;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  .nav__secondary {
+    flex-direction: row;
+    gap: 48px;
+    width: auto;
+  }
+
+  .nav__primary {
+    width: 100%;
+  }
+
+  .nav__group .nav__sublink {
+    font-size: 20px;
+  }
+}

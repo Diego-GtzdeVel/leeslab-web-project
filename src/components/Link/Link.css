@@ -1,0 +1,29 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: var(--fs-body-lg);
+  line-height: normal;
+  text-decoration: none;
+  white-space: nowrap;
+  text-box: trim-both cap alphabetic;
+  text-underline-offset: 6px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link--blue {
+  padding: 10px 10px 10px 0;
+  font-family: var(--font-fira);
+  font-weight: 700;
+  color: var(--lees-blue);
+}
+
+.link--light {
+  font-family: var(--font-trebuchet);
+  font-weight: 400;
+  color: var(--white);
+}

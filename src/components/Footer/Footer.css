@@ -1,0 +1,147 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: var(--space-page) var(--space-page) 0;
+  background-color: var(--lees-blue-contrast);
+  color: var(--white);
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+.footer__contents {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+}
+
+.footer__promo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* El logo viene recortado de una imagen más grande en Figma */
+.promo__logo,
+.footer__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo__logo {
+  width: 200px;
+  height: 47px;
+}
+
+.promo__logo img,
+.footer__image img {
+  position: absolute;
+  top: -21.02%;
+  left: -0.67%;
+  width: 101.34%;
+  height: 142.14%;
+  max-width: none;
+}
+
+.promo__text {
+  max-width: 472px;
+  font-family: var(--font-fira);
+  font-weight: 700;
+  font-size: var(--fs-body-lg);
+  text-box: trim-both cap alphabetic;
+}
+
+.footer__links {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.links__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  min-width: 113px;
+}
+
+.links__title {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  text-align: center;
+  text-box: trim-both cap alphabetic;
+}
+
+.links__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__spacer {
+  width: 100%;
+  height: 2px;
+}
+
+.footer__copyright {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: var(--fs-body-lg);
+  text-box: trim-both cap alphabetic;
+}
+
+.footer__logo {
+  width: 100%;
+  height: 212px;
+  overflow: hidden;
+}
+
+.footer__image {
+  width: 100%;
+  aspect-ratio: 1420 / 333;
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .footer__contents {
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    gap: 48px;
+    padding: var(--space-section) var(--space-section) 0;
+  }
+
+  .footer__links {
+    gap: 48px;
+  }
+
+  .links__title {
+    font-size: 26px;
+  }
+
+  .promo__text,
+  .footer__copyright,
+  .links__link {
+    font-size: 20px;
+  }
+}

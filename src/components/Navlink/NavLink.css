@@ -1,0 +1,38 @@
+.navlink {
+  position: relative;
+  display: inline-grid;
+  overflow: hidden;
+  font-family: var(--font-trebuchet);
+  font-size: 48px;
+  line-height: normal;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Ambas copias ocupan la misma celda */
+.navlink__text {
+  grid-area: 1 / 1;
+  transition: transform var(--duration-navlink) var(--ease-navlink);
+}
+
+.navlink__text--hover {
+  color: var(--slate);
+  transform: translateX(calc(-100% - 8px));
+}
+
+.navlink:hover .navlink__text,
+.navlink:focus-visible .navlink__text {
+  transform: translateX(calc(100% + 8px));
+}
+
+.navlink:hover .navlink__text--hover,
+.navlink:focus-visible .navlink__text--hover {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .navlink {
+    font-size: 36px;
+  }
+}
