@@ -60,8 +60,17 @@
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: center 41%;
+  opacity: 0;
+  transform: scale(1.04);
+  /* Crossfade entre imágenes, mismo lenguaje que el carrusel de Soluciones */
+  transition:
+    opacity 1200ms var(--ease-organic),
+    transform 1800ms var(--ease-organic);
+}
+
+.hero__background--active {
   opacity: 0.6;
+  transform: scale(1);
 }
 
 .hero__icon {

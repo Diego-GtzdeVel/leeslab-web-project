@@ -25,7 +25,7 @@ export default function Benefits() {
   return (
     <section className="benefits">
       <div className="benefits__container">
-        <h2 className="benefits__title">Por qué elegirnos</h2>
+        <h2 className="benefits__title">¿Por qué elegirnos?</h2>
         {BENEFITS.map((item, i) => (
           <Fragment key={item.name}>
             {i > 0 && <img className="benefits__spacer" src={spacer} alt="" aria-hidden="true" />}
