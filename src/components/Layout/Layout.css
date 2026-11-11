@@ -1,0 +1,17 @@
+/* Slide up al entrar a una página nueva. Con fill `backwards` (no `both`) el transform
+   desaparece al terminar: así no queda un containing block que afecte a elementos
+   fixed dentro de la página. */
+.layout__page--enter {
+  animation: layout-page-enter var(--duration-page) var(--ease-organic) backwards;
+}
+
+@keyframes layout-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

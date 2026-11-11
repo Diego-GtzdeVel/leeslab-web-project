@@ -7,6 +7,19 @@
   padding: 8px var(--space-page);
   background-color: var(--lees-blue-contrast);
   color: var(--white);
+  transition: transform 400ms var(--ease-organic);
+}
+
+/* Escondido al hacer scroll hacia abajo. Si algo dentro recibe foco con teclado,
+   se vuelve a mostrar para que el foco nunca quede fuera de pantalla.
+   (:focus-visible y no :focus-within: tras un clic con mouse el botón Menú
+   conserva el foco y el nav ya no se escondería.) */
+.nav--hidden {
+  transform: translateY(-100%);
+}
+
+.nav--hidden:has(:focus-visible) {
+  transform: none;
 }
 
 /* ---------- Barra (estado closed) ---------- */
@@ -93,6 +106,12 @@
 .nav--open .nav__panel {
   grid-template-rows: 1fr;
   opacity: 1;
+}
+
+/* Reset al navegar: el nav vuelve a cerrado de golpe, sin transiciones */
+.nav--instant,
+.nav--instant * {
+  transition: none !important;
 }
 
 .nav__panel-inner {
@@ -206,5 +225,11 @@
 
   .nav__group .nav__sublink {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu__label {
+    display: none;
   }
 }

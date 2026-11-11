@@ -1,0 +1,64 @@
+.line-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.line-link__bar {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--verde-acento);
+  transition:
+    width 300ms var(--ease-organic),
+    border-radius 300ms var(--ease-organic),
+    background-color 300ms var(--ease-organic);
+}
+
+.line-link:hover .line-link__bar,
+.line-link:focus-visible .line-link__bar,
+.line-link--active .line-link__bar {
+  width: 48px;
+  border-radius: 4px;
+}
+
+/* Activo: la barra se vuelve un "track" y el progreso la va llenando */
+.line-link--active .line-link__bar {
+  background-color: color-mix(in srgb, var(--verde-acento) 30%, transparent);
+}
+
+.line-link__progress {
+  position: absolute;
+  inset: 0;
+  background-color: var(--verde-acento);
+  transform-origin: left center;
+  /* La animación siempre existe en el activo; solo cambia si corre o está en pausa.
+     Así, al pausar (hover, foco, fuera de vista) conserva su avance. */
+  animation: line-link-fill var(--line-duration) linear forwards;
+  animation-play-state: paused;
+}
+
+.line-link--playing .line-link__progress {
+  animation-play-state: running;
+}
+
+/* Sin autoplay: la barra se ve llena, como el estado Active de Figma */
+@media (prefers-reduced-motion: reduce) {
+  .line-link__progress {
+    animation: none;
+  }
+}
+
+@keyframes line-link-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

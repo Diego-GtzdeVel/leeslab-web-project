@@ -37,3 +37,9 @@
   --ease-navlink: cubic-bezier(0.801, 0.006, 0.927, 0.51);
   --duration-navlink: 300ms;
 }
+
+:root {
+  --verde-acento: #337567;                      /* barras del Line Link en Figma */
+  --ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-page: 700ms;                       /* slide up entre páginas */
+}
