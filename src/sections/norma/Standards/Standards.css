@@ -1,0 +1,118 @@
+.standards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: var(--space-section);
+  background-color: var(--cold-grey);
+}
+
+.standards__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  text-align: center;
+}
+
+.standards__title {
+  font-size: var(--fs-h2);
+  color: var(--lees-blue);
+  text-box: trim-both cap alphabetic;
+}
+
+.standards__subtitle {
+  font-size: var(--fs-body-lg);
+  color: var(--slate);
+  text-box: trim-both cap alphabetic;
+}
+
+.standards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 24px;
+  list-style: none;
+}
+
+.standards__card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background-color: var(--white);
+}
+
+.standards__image {
+  flex-shrink: 0;
+  width: 165px;
+  height: 150px;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+}
+
+.standards__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  font-size: var(--fs-body-lg);
+}
+
+.standards__code {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: inherit;
+  color: var(--verde-acento);
+  text-box: trim-both cap alphabetic;
+}
+
+.standards__desc {
+  font-family: var(--font-fira);
+  color: var(--slate);
+  text-box: trim-both cap alphabetic;
+}
+
+@media (max-width: 1280px) {
+  .standards__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .standards__title {
+    font-size: 30px;
+  }
+
+  .standards__subtitle {
+    font-size: 20px;
+  }
+
+  .standards__grid {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .standards__card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .standards__image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .standards__text {
+    gap: 16px;
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,124 @@
+.solutions-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: var(--space-section);
+  background-color: var(--white);
+}
+
+.solutions-list__title {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  color: var(--lees-blue);
+  text-align: center;
+  text-box: trim-both cap alphabetic;
+}
+
+.solutions-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.solutions-list__card {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background-color: var(--cold-grey);
+  text-decoration: none;
+  transition: background-color 300ms var(--ease-organic);
+}
+
+.solutions-list__card:hover {
+  background-color: var(--cold-grey-50);
+}
+
+.solutions-list__card:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Hover del ícono: 150 → 180 px, como la Variant2 de Figma (400 ms) */
+.solutions-list__icon {
+  flex-shrink: 0;
+  width: 150px;
+  height: 133px;
+  object-fit: contain;
+  transition: transform 400ms cubic-bezier(0.55, 0.02, 0.82, 1.01);
+}
+
+.solutions-list__card:hover .solutions-list__icon,
+.solutions-list__card:focus-visible .solutions-list__icon {
+  transform: scale(1.2);
+}
+
+.solutions-list__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 36px;
+  min-width: 0;
+  font-size: var(--fs-body-lg);
+}
+
+.solutions-list__name {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: inherit;
+  color: var(--lees-blue);
+  text-box: trim-both cap alphabetic;
+}
+
+.solutions-list__desc {
+  font-family: var(--font-trebuchet);
+  color: var(--slate);
+  text-box: trim-both cap alphabetic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solutions-list__icon {
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .solutions-list__card {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-list__title {
+    font-size: 30px;
+  }
+
+  .solutions-list__items {
+    gap: 16px;
+  }
+
+  .solutions-list__card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .solutions-list__icon {
+    width: 96px;
+    height: 85px;
+    transform-origin: left center;
+  }
+
+  .solutions-list__text {
+    gap: 16px;
+    font-size: 20px;
+  }
+}

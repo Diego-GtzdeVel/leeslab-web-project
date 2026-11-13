@@ -1,0 +1,120 @@
+.psi-change {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: var(--space-section) var(--space-section) 64px;
+  background-color: var(--cold-grey-50);
+}
+
+.psi-change__title {
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  color: var(--lees-blue);
+  text-box: trim-both cap alphabetic;
+}
+
+.psi-change__body {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.psi-change__intro {
+  flex-shrink: 0;
+  width: 339px;
+  padding: 16px 0;
+  font-family: var(--font-fira);
+  font-weight: 700;
+  font-size: var(--fs-body-lg);
+  color: var(--slate);
+  text-box: trim-both cap alphabetic;
+}
+
+.psi-change__list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+}
+
+.psi-change__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  padding-block: 36px;
+  border-top: 1px solid var(--divider);
+  font-size: var(--fs-body-lg);
+  color: var(--slate);
+}
+
+.psi-change__row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.psi-change__name {
+  flex-shrink: 0;
+  width: 300px;
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+  text-box: trim-both cap alphabetic;
+}
+
+.psi-change__desc {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-trebuchet);
+  text-box: trim-both cap alphabetic;
+}
+
+@media (max-width: 1024px) {
+  .psi-change__body {
+    flex-direction: column;
+  }
+
+  .psi-change__intro {
+    width: auto;
+  }
+
+  .psi-change__list {
+    width: 100%;
+    padding: 0;
+  }
+
+  .psi-change__row {
+    gap: 40px;
+  }
+
+  .psi-change__name {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .psi-change {
+    padding-bottom: 40px;
+  }
+
+  .psi-change__title {
+    font-size: 30px;
+  }
+
+  .psi-change__intro {
+    font-size: 20px;
+  }
+
+  .psi-change__row {
+    flex-direction: column;
+    gap: 12px;
+    padding-block: 24px;
+    font-size: 20px;
+  }
+
+  .psi-change__name {
+    width: auto;
+  }
+}

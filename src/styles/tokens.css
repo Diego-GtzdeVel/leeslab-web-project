@@ -8,6 +8,7 @@
   --slate: #1c2333;
   --white: #ffffff;
   --cta-overlay: rgba(55, 77, 146, 0.4);
+  --divider: #b8bdc7;                           /* separadores de "¿Cuenta con un equipo acreditado?" */
 
   /* Tipografía */
   --font-trebuchet: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
