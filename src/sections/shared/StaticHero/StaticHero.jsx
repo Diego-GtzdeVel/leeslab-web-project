@@ -4,6 +4,7 @@ import './StaticHero.css';
 /**
  * Hero de página reutilizable.
  * - variant: 'default' (título Azul Lees Lab) | 'home' (título Azul de contraste + subtítulo Fira)
+ *   | 'hydralog' (título y subtítulo en Fira)
  * - cta: { label, href, variant: 'green' | 'blue' }
  * - image: foto de fondo · icon: logo al centro (opcional)
  */

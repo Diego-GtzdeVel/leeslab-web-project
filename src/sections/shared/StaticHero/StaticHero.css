@@ -48,6 +48,16 @@
   font-family: var(--font-fira);
 }
 
+/* Variante de Hydralog: título y subtítulo en Fira */
+.static-hero--hydralog .static-hero__title {
+  max-width: 677px;
+  font-family: var(--font-fira);
+}
+
+.static-hero--hydralog .static-hero__subtitle {
+  font-family: var(--font-fira);
+}
+
 .static-hero__image {
   position: relative;
   display: flex;
