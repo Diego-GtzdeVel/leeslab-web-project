@@ -1,0 +1,101 @@
+.try-hydralog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-section);
+  background-color: var(--cold-grey);
+}
+
+.try-hydralog__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  padding: 16px;
+}
+
+.try-hydralog__image {
+  flex-shrink: 0;
+  width: 600px;
+  height: 448px;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+.try-hydralog__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  min-width: 0;
+  padding: 24px;
+}
+
+.try-hydralog__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--font-trebuchet);
+  font-weight: 700;
+}
+
+.try-hydralog__title {
+  font-size: var(--fs-h2);
+  color: var(--lees-blue);
+  text-box: trim-both cap alphabetic;
+}
+
+.try-hydralog__subtitle {
+  font-size: var(--fs-body-lg);
+  color: var(--slate);
+  text-box: trim-both cap alphabetic;
+}
+
+.try-hydralog__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.try-hydralog__badge img {
+  width: 180px;
+  height: 52px;
+}
+
+@media (max-width: 1280px) {
+  .try-hydralog__container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .try-hydralog__image {
+    align-self: center;
+  }
+
+  .try-hydralog__text {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .try-hydralog__container {
+    padding: 0;
+  }
+
+  .try-hydralog__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 600 / 448;
+  }
+
+  .try-hydralog__title {
+    font-size: 30px;
+  }
+
+  .try-hydralog__subtitle {
+    font-size: 20px;
+  }
+}
