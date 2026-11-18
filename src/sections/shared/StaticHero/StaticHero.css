@@ -44,18 +44,30 @@
   color: var(--lees-blue-contrast);
 }
 
-.static-hero--home .static-hero__subtitle {
-  font-family: var(--font-fira);
-}
-
-/* Variante de Hydralog: título y subtítulo en Fira */
+/* Variante de Hydralog: título un poco más ancho */
 .static-hero--hydralog .static-hero__title {
   max-width: 677px;
-  font-family: var(--font-fira);
 }
 
-.static-hero--hydralog .static-hero__subtitle {
-  font-family: var(--font-fira);
+/* Variante apilada (contacto): sin imagen, subtítulo debajo del título */
+.static-hero--stacked {
+  align-items: stretch;
+  padding-bottom: var(--space-page);
+}
+
+.static-hero--stacked .static-hero__heading {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.static-hero--stacked .static-hero__title {
+  max-width: 874px;
+}
+
+.static-hero--stacked .static-hero__subheader {
+  align-items: flex-start;
+  max-width: 659px;
 }
 
 .static-hero__image {

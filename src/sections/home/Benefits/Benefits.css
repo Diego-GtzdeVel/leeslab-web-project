@@ -15,7 +15,7 @@
 }
 
 .benefits__title {
-  font-family: var(--font-fira);
+  font-family: var(--font-trebuchet);
   font-weight: 700;
   font-size: var(--fs-h2);
   color: var(--lees-blue);
@@ -43,7 +43,7 @@
 .benefits__desc {
   flex: 1;
   min-width: 0;
-  font-family: var(--font-fira);
+  font-family: var(--font-trebuchet);
   text-box: trim-both cap alphabetic;
 }
 

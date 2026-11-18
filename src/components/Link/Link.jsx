@@ -4,7 +4,7 @@ import './Link.css';
 
 /**
  * Link de texto de Lees Lab.
- * - variant: 'blue' (Fira Bold, Azul Lees Lab) | 'light' (Trebuchet, blanco — footer)
+ * - variant: 'blue' (Trebuchet Bold, Azul Lees Lab) | 'light' (Trebuchet, blanco — footer)
  * - href: rutas propias ("/norma") navegan con el router; el resto con <a> normal
  * - className: clase de la capa en Figma (p. ej. "psi__link")
  */

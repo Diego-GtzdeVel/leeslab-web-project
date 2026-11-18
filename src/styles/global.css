@@ -21,6 +21,11 @@ h1, h2, h3, p, ul {
   margin: 0;
 }
 
+/* Los controles de formulario no heredan la tipografía por defecto */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
 img {
   display: block;
   max-width: 100%;

@@ -16,7 +16,7 @@
 }
 
 .page-placeholder__body {
-  font-family: var(--font-fira);
+  font-family: var(--font-trebuchet);
   font-size: var(--fs-body);
   color: var(--slate);
 }

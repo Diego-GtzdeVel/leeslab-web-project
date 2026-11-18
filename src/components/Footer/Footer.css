@@ -54,7 +54,7 @@
 
 .promo__text {
   max-width: 472px;
-  font-family: var(--font-fira);
+  font-family: var(--font-trebuchet);
   font-weight: 700;
   font-size: var(--fs-body-lg);
   text-box: trim-both cap alphabetic;

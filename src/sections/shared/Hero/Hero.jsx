@@ -8,7 +8,7 @@ import heroIcon from '@/assets/hero-icon.png';
 import './Hero.css';
 
 // Tiempo que se queda cada imagen antes de pasar a la siguiente
-const SLIDE_MS = 6000;
+const SLIDE_MS = 4000;
 
 /**
  * - images: lista de { src, position? }. Con más de una, rotan en slideshow
