@@ -1,19 +1,23 @@
+/* Escritorio: texto | imagen | indicadores. Las columnas usan fr para que texto e
+   imagen se encojan juntos (602:640 como en Figma) en vez de que la imagen fija
+   aplaste al texto. El padding centra el contenido a un máximo de --solutions-max. */
 .solutions {
-  display: flex;
+  --solutions-max: 1370px;
+  --solutions-gap: clamp(24px, 2.5vw, 32px);
+  display: grid;
+  grid-template-columns: minmax(0, 602fr) minmax(0, 640fr) auto;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  min-height: 658px;
-  padding: var(--space-page);
+  gap: var(--solutions-gap);
+  padding-block: var(--space-page);
+  padding-inline: max(var(--space-page), (100% - var(--solutions-max)) / 2);
   background-color: var(--white);
 }
 
 /* ---------- Texto ---------- */
+/* Todos los slides en la misma celda: la altura es la del más largo y no brinca */
 .solutions__text {
   display: grid;
-  flex: 1;
   min-width: 0;
-  max-width: 602px;
 }
 
 .solutions__slide {
@@ -21,7 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 36px;
+  gap: clamp(20px, 2.5vw, 36px);
   opacity: 0;
   visibility: hidden;
   transform: translateY(16px);
@@ -45,14 +49,14 @@
 .solutions__title {
   font-family: var(--font-trebuchet);
   font-weight: 700;
-  font-size: 40px;
+  font-size: clamp(28px, 1.6vw + 16px, 40px);
   color: var(--lees-blue);
   text-box: trim-both cap alphabetic;
 }
 
 .solutions__desc {
   font-family: var(--font-trebuchet);
-  font-size: var(--fs-body-lg);
+  font-size: clamp(18px, 0.6vw + 14px, var(--fs-body-lg));
   color: var(--slate);
 }
 
@@ -68,9 +72,8 @@
 /* ---------- Imagen ---------- */
 .solutions__image {
   position: relative;
-  flex-shrink: 0;
-  width: 640px;
-  height: 610px;
+  width: 100%;
+  aspect-ratio: 640 / 610;
   overflow: hidden;
   touch-action: pan-y;
 }
@@ -101,7 +104,6 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
-  flex-shrink: 0;
 }
 
 /* ---------- Movimiento reducido ---------- */
@@ -116,39 +118,21 @@
 }
 
 /* ---------- Responsivo ---------- */
-@media (max-width: 1280px) {
-  .solutions__image {
-    width: 480px;
-    height: 520px;
-  }
-
-  .solutions__title {
-    font-size: 34px;
-  }
-}
-
+/* Tablet y móvil: una columna → imagen, indicadores debajo, texto */
 @media (max-width: 1024px) {
   .solutions {
-    flex-direction: column-reverse;
-    align-items: stretch;
-    gap: 24px;
-    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
     padding: var(--space-section);
   }
 
-  .solutions__text {
-    max-width: none;
-  }
-
   .solutions__image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 640 / 610;
-    max-height: 520px;
+    order: 1;
+    aspect-ratio: 3 / 2; /* más horizontal: la foto no se come la pantalla */
   }
 
-  /* Indicadores horizontales debajo de la imagen */
   .solutions__nav {
+    order: 2;
     flex-direction: row;
     justify-content: center;
     gap: 0;
@@ -158,18 +142,34 @@
     width: auto;
     padding: 12px 6px;
   }
+
+  .solutions__text {
+    order: 3;
+  }
+
+  /* Pegado arriba: sin hueco entre indicadores y textos cortos */
+  .solutions__slide {
+    justify-content: flex-start;
+  }
 }
 
-@media (max-width: 768px) {
-  .solutions__title {
-    font-size: 28px;
+@media (max-width: 600px) {
+  .solutions__image {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Teléfonos chicos: los 7 indicadores a tamaño normal no caben en ~270px */
+@media (max-width: 400px) {
+  .solutions__nav .line-link {
+    padding-inline: 4px;
   }
 
-  .solutions__slide {
-    gap: 20px;
+  .solutions__nav .line-link__bar {
+    width: 24px;
   }
 
-  .solutions__desc {
-    font-size: 18px;
+  .solutions__nav .line-link--active .line-link__bar {
+    width: 36px;
   }
 }

@@ -21,28 +21,28 @@ export default function ContactForm() {
         </p>
 
         <div className="contact__group">
-          <h2 className="contact__group-title">Contacto Directo</h2>
-          <ul className="contact__list">
+          <h2 className="contact__title">Contacto directo</h2>
+          <dl className="contact__list">
             {CONTACTO_DIRECTO.map((item) => (
-              <li className="contact__item" key={item.label}>
-                <strong>{item.label}</strong>{' '}
-                {item.href ? (
-                  <a className="contact__link" href={item.href}>
-                    {item.value}
-                  </a>
-                ) : (
-                  item.value
-                )}
-              </li>
+              <div className="contact__item" key={item.label}>
+                <dt className="contact__label">{item.label}</dt>
+                <dd className="contact__value">
+                  {item.href ? (
+                    <a className="contact__link" href={item.href}>
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
 
-        <div className="contact__group">
-          <h2 className="contact__group-title">Horario de Atención</h2>
-          <p className="contact__item">
-            <strong>{HORARIO.label}</strong> {HORARIO.value}
-          </p>
+        <div className="contact__group contact__group--schedule">
+          <h2 className="contact__title">Horario de atención</h2>
+          <p className="contact__value contact__value--light">{HORARIO}</p>
         </div>
       </div>
 
